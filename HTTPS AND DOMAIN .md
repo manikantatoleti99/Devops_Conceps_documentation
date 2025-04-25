@@ -2,9 +2,18 @@
 
 ---
 
-### **What is Nginx?**
+ What is Nginx?
+Nginx is a powerful web server. It can:
 
-Nginx is a high-performance web server that is commonly used for serving websites, acting as a reverse proxy, load balancer, and HTTP cache. It is known for its speed, efficiency, and scalability. In this guide, we’ll use Nginx to serve your website and handle SSL encryption using Certbot.
+Serve your website's HTML, CSS, and images
+
+Work as a reverse proxy, forwarding traffic to backend applications (like Django)
+
+Handle HTTPS (SSL) encryption
+
+Act as a load balancer or cache
+
+We’ll use Nginx to send browser requests to your Django app and to manage HTTPS using SSL certificates.
 
 ---
 
