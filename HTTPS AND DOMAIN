@@ -39,6 +39,20 @@ Step-by-Step Guide: Set Up HTTPS for Your Domain Using Nginx and Certbot
     }
  }
 
+///////////////////////////////////////////////
+
+Line                                     | Meaning
+listen 443 ssl;                          | This tells Nginx to listen on port 443, which is used for HTTPS connections. The ssl means it’s using SSL encryption.
+server_name manikantadevops.hopto.org;   | This is your domain name. When someone opens this domain in their browser, Nginx will use this block to serve it.
+ssl_certificate ...                      | This points to the actual SSL certificate file you got from Certbot. It encrypts traffic.
+ssl_certificate_key ...                  | This is the private key that matches your SSL certificate. Never share this file!
+location / { ... }                       | This part defines what happens when someone visits your domain.
+proxy_pass http://127.0.0.1:8000;        | This means: “Send all traffic to your Django app running locally on port 8000.”
+proxy_set_header Host $host;             | It passes the original domain name to your app (useful for Django to know the host).
+proxy_set_header X-Real-IP $remote_addr; | This sends the real user IP to your Django app (for logs, analytics, etc.).
+
+///////////////////////////////////////////////
+
  
  Step 5: Enable the Site and Remove Default Config
  sudo ln -s /etc/nginx/sites-available/djangoapp /etc/nginx/sites-enabled/
