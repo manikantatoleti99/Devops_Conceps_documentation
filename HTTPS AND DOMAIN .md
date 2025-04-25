@@ -3,6 +3,7 @@
 ---
 
  What is Nginx?
+ 
 Nginx is a powerful web server. It can:
 
 Serve your website's HTML, CSS, and images
