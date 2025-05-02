@@ -86,6 +86,24 @@ sudo apt install python3 python3-pip -y
 
 # Install AWS CLI
 sudo apt install awscli -y
+ or
+/////////////////////////////////////////////////////
+# 1. Install required dependencies
+sudo apt update
+sudo apt install unzip curl -y
+
+# 2. Download the latest AWS CLI v2 package
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+# 3. Unzip the installer
+unzip awscliv2.zip
+
+# 4. Run the install script
+sudo ./aws/install
+
+# 5. Verify installation
+aws --version
+/////////////////////////////////////////////////////////////
 
 # Install kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
