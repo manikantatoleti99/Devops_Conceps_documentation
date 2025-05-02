@@ -81,6 +81,9 @@ While Docker lets you run containers, Kubernetes helps manage them **at scale**,
 # Update system
 sudo apt update && sudo apt upgrade -y
 
+# Install Python (required for AWS CLI and future automation)
+sudo apt install python3 python3-pip -y
+
 # Install AWS CLI
 sudo apt install awscli -y
 
